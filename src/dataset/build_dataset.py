@@ -61,27 +61,32 @@ def build_dataset(video_id: str) -> Path:
     print("[COPIED] results.csv")
 
     # ------------------------------------------------------
-    # Update manifest
+    # Update manifest.json safely
     # ------------------------------------------------------
-
     manifest_path = DATASET_ROOT / "manifest.json"
 
+    # If file exists, load it
     if manifest_path.exists():
         manifest = json.loads(manifest_path.read_text())
     else:
-        manifest = {"updated_at": "", "videos": []}
+        manifest = {}
 
-    if video_id not in manifest["videos"]:
-        manifest["videos"].append(video_id)
+    # Ensure required fields exist
+    if "videos" not in manifest or not isinstance(manifest["videos"], list):
+        manifest["videos"] = []
 
     manifest["updated_at"] = datetime.utcnow().isoformat()
 
-    manifest_path.write_text(json.dumps(manifest, indent=2))
-    print("[UPDATED] dataset/manifest.json")
+    # Add video if missing
+    if video_id not in manifest["videos"]:
+        manifest["videos"].append(video_id)
 
-    print(f"[DONE] Dataset packaged at: {out_dir}\n")
+    # Save back
+    manifest_path.write_text(json.dumps(manifest, indent=2))
 
     return out_dir
+
+
 if __name__ == "__main__":
     import argparse
 
