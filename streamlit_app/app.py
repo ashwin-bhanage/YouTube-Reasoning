@@ -3,32 +3,65 @@ import streamlit as st
 from pathlib import Path
 import pandas as pd
 
-DATASET_DIR = Path("dataset")
+# Base dataset location (must exist in your GitHub repo)
+BASE_DIR = Path(__file__).resolve().parents[1]
+DATASET_DIR = BASE_DIR / "dataset"
 
-def load_json(path):
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+def load_json(path: Path):
+    return json.loads(path.read_text(encoding="utf-8"))
 
-st.title("📊 YouTube Reasoning Dataset Viewer")
+def load_jsonl(path: Path):
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
 
-videos = [p.name for p in DATASET_DIR.iterdir() if p.is_dir()]
-video_id = st.selectbox("Select video:", videos)
+st.title("📊 YouTube Reasoning Prompt Dataset Viewer")
 
-vpath = DATASET_DIR / video_id
+# Detect all packaged dataset folders
+videos = sorted([p.name for p in DATASET_DIR.iterdir() if p.is_dir()])
 
-st.header("Transcript")
-st.json(load_json(vpath / "transcript.json"))
+if not videos:
+    st.error("❌ No dataset found inside /dataset/. Upload a dataset folder.")
+    st.stop()
 
-st.header("Prompts")
-st.json(load_json(vpath / "prompts.json"))
+video_id = st.selectbox("Select a video dataset:", videos)
+vdir = DATASET_DIR / video_id
 
-st.header("Golden Answers")
-ga = [json.loads(l) for l in open(vpath / "golden_answers.jsonl")]
-st.json(ga)
+# --- Transcript ---
+st.header("🎬 Transcript")
+tpath = vdir / "transcript.json"
+if tpath.exists():
+    st.json(load_json(tpath))
+else:
+    st.warning("Transcript not found.")
 
-st.header("Model Outputs")
-mo = [json.loads(l) for l in open(vpath / "model_outputs.jsonl")]
-st.json(mo)
+# --- Prompts ---
+st.header("🧠 Prompts")
+ppath = vdir / "prompts.json"
+if ppath.exists():
+    st.json(load_json(ppath))
+else:
+    st.warning("Prompts not found.")
 
-st.header("Scores")
-df = pd.read_csv(vpath / "results.csv")
-st.dataframe(df)
+# --- Golden Answers ---
+st.header("🏅 Golden Answers")
+gpath = vdir / "golden_answers.jsonl"
+if gpath.exists():
+    st.json(load_jsonl(gpath))
+else:
+    st.warning("Golden answers not found.")
+
+# --- Model Outputs ---
+st.header("🤖 Model Outputs (Gemini)")
+mpath = vdir / "model_outputs.jsonl"
+if mpath.exists():
+    st.json(load_jsonl(mpath))
+else:
+    st.warning("Model outputs not found.")
+
+# --- Scores ---
+st.header("📈 Evaluation Scores")
+rpath = vdir / "results.csv"
+if rpath.exists():
+    df = pd.read_csv(rpath)
+    st.dataframe(df)
+else:
+    st.warning("Scores file not found.")
