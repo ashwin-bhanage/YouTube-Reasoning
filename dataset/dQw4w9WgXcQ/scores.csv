@@ -1,0 +1,5 @@
+video_id,prompt_id,model,reasoning_depth,factual_accuracy,coherence
+dQw4w9WgXcQ,dQw4w9WgXcQ_prompt_1,gemini-2.5-flash,5,4,5
+dQw4w9WgXcQ,dQw4w9WgXcQ_prompt_2,gemini-2.5-flash,5,4,5
+dQw4w9WgXcQ,dQw4w9WgXcQ_prompt_3,gemini-2.5-flash,5,5,5
+dQw4w9WgXcQ,dQw4w9WgXcQ_prompt_4,gemini-2.5-flash,5,4,5

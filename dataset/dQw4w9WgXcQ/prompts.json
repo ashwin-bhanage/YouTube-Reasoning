@@ -1,0 +1,58 @@
+{
+  "video_id": "dQw4w9WgXcQ",
+  "title": "dQw4w9WgXcQ",
+  "channel": "unknown",
+  "keywords": [
+    "gonna",
+    "never",
+    "give",
+    "tell",
+    "make",
+    "say",
+    "let",
+    "down"
+  ],
+  "prompts": [
+    {
+      "prompt_id": "dQw4w9WgXcQ_prompt_1",
+      "prompt": "Based on the opening lines, what kind of relationship does the speaker appear to be proposing, and what underlying shared understanding does he assume exists with the recipient?",
+      "domain": "psychology",
+      "difficulty": "medium",
+      "golden_answer_guidance": "The answer should identify the serious, committed, and potentially exclusive nature of the relationship being proposed. It should also highlight the presumed mutual history or established 'rules' for interaction that the speaker believes they both understand.",
+      "generated_at": "2025-11-21T18:23:43.112956",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "dQw4w9WgXcQ_prompt_2",
+      "prompt": "Evaluate the strategic impact of the statement, 'You wouldn't get this from any other guy,' on the recipient's perception of the speaker's offer and their own potential value.",
+      "domain": "psychology",
+      "difficulty": "hard",
+      "golden_answer_guidance": "The answer should analyze how this statement attempts to establish exclusivity and a unique value proposition, potentially influencing the recipient through a sense of special treatment or urgency, while also potentially implying a lack of similar quality elsewhere.",
+      "generated_at": "2025-11-21T18:23:43.112956",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "dQw4w9WgXcQ_prompt_3",
+      "prompt": "How does the speaker's initial desire to 'tell you how I'm feeling' logically connect to the broader themes of unwavering commitment and support hinted at by the keywords 'never' and 'give'?",
+      "domain": "psychology",
+      "difficulty": "medium",
+      "golden_answer_guidance": "The answer should explain that the genuine expression of feelings serves as the emotional bedrock for the subsequent promises of steadfastness. It implies that these deep feelings drive the speaker's resolve to never abandon or disappoint the recipient.",
+      "generated_at": "2025-11-21T18:23:43.112956",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "dQw4w9WgXcQ_prompt_4",
+      "prompt": "Infer the expected behavior or reciprocal response from the recipient, given the speaker's explicit declaration of 'A full commitment's what I'm thinking of' combined with the assertion 'You know the rules and so do I.'",
+      "domain": "psychology",
+      "difficulty": "medium",
+      "golden_answer_guidance": "The answer should deduce that the speaker anticipates a corresponding level of seriousness and commitment from the recipient, or at least an acknowledgment of the proposed relationship terms, based on the assumed shared understanding and the direct proposal.",
+      "generated_at": "2025-11-21T18:23:43.112956",
+      "generator_model": "gemini-2.5-flash"
+    }
+  ],
+  "generated_at": "2025-11-21T18:23:43.112956",
+  "generator": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash"
+  }
+}

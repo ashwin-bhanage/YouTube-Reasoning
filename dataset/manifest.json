@@ -1,0 +1,9 @@
+{
+  "dQw4w9WgXcQ": {
+    "transcript": true,
+    "prompts": true,
+    "gold": true,
+    "responses": true,
+    "scores": true
+  }
+}
