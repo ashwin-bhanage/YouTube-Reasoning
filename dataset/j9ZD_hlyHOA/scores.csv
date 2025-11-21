@@ -1,0 +1,5 @@
+video_id,prompt_id,model,reasoning_depth,factual_accuracy,coherence
+j9ZD_hlyHOA,portfolio_critique_001,gemini-2.5-flash,5,3,5
+j9ZD_hlyHOA,tech_stack_synergy_002,gemini-2.5-flash,5,3,5
+j9ZD_hlyHOA,design_philosophy_003,gemini-2.5-flash,5,3,5
+j9ZD_hlyHOA,professional_impact_004,gemini-2.5-flash,5,3,5

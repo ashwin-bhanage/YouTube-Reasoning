@@ -5,5 +5,12 @@
     "gold": true,
     "responses": true,
     "scores": true
+  },
+  "j9ZD_hlyHOA": {
+    "transcript": true,
+    "prompts": true,
+    "gold": false,
+    "responses": true,
+    "scores": true
   }
 }

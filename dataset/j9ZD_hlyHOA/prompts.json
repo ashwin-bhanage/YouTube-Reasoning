@@ -1,0 +1,58 @@
+{
+  "video_id": "j9ZD_hlyHOA",
+  "title": "Build and Deploy a MacOS style Portfolio with React, GSAP & Tailwind",
+  "channel": "JavaScript Mastery",
+  "keywords": [
+    "can",
+    "then",
+    "window",
+    "right",
+    "here",
+    "within",
+    "now",
+    "want"
+  ],
+  "prompts": [
+    {
+      "prompt_id": "portfolio_critique_001",
+      "prompt": "The video strongly advises against 'boring portfolios.' What underlying assumption about user engagement drives this critique, and how does a 'MacOS style' design likely address this assumption?",
+      "domain": "tech",
+      "difficulty": "medium",
+      "golden_answer_guidance": "A correct answer should infer that the assumption is about immediate visual appeal and user retention, explaining how the MacOS style implies a polished, intuitive, and interactive experience that combats disengagement.",
+      "generated_at": "2025-11-21T20:00:29.120902",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "tech_stack_synergy_002",
+      "prompt": "How might the combined capabilities of React, GSAP, and Tailwind CSS strategically allow for the creation of a 'MacOS style' portfolio with dynamic interactions and precise visual control, which would be challenging to achieve with a simpler front-end setup?",
+      "domain": "tech",
+      "difficulty": "hard",
+      "golden_answer_guidance": "This answer must synthesize how React structures the UI, GSAP enables complex animations, and Tailwind provides atomic styling, explaining their synergy in achieving the specific MacOS aesthetic and interactive fluidity.",
+      "generated_at": "2025-11-21T20:00:29.120902",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "design_philosophy_003",
+      "prompt": "Inferring from the video's initial emphasis on avoiding generic designs, what core principles of modern web design and user experience does the 'MacOS style' implicitly champion for developer portfolios?",
+      "domain": "tech",
+      "difficulty": "medium",
+      "golden_answer_guidance": "A correct answer should deduce principles like intuitive navigation, elegant aesthetics, seamless interactivity, and a focus on making the user's journey engaging and memorable, moving beyond static content.",
+      "generated_at": "2025-11-21T20:00:29.120902",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "professional_impact_004",
+      "prompt": "Considering the stated goal of building a unique portfolio, analyze the potential professional impact of deploying a 'MacOS style' portfolio on a developer's career trajectory, distinguishing it from a standard portfolio.",
+      "domain": "tech",
+      "difficulty": "medium",
+      "golden_answer_guidance": "The answer should causally link the distinctive design to increased memorability, showcasing advanced technical skills and design sensibility, potentially leading to more favorable recruiter impressions and job opportunities compared to conventional approaches.",
+      "generated_at": "2025-11-21T20:00:29.120902",
+      "generator_model": "gemini-2.5-flash"
+    }
+  ],
+  "generated_at": "2025-11-21T20:00:29.121919",
+  "generator": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash"
+  }
+}

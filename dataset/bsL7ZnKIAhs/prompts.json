@@ -1,0 +1,58 @@
+{
+  "video_id": "bsL7ZnKIAhs",
+  "title": "Did Google just kill OpenAI?",
+  "channel": "Fireship",
+  "keywords": [
+    "which",
+    "google",
+    "all",
+    "gemini",
+    "just",
+    "like",
+    "coding",
+    "bard"
+  ],
+  "prompts": [
+    {
+      "prompt_id": "google_ai_shift_1",
+      "prompt": "Considering Google's initial struggles with Bard, analyze the potential strategic shifts or technological advancements that Fireship might suggest led to Google's re-emergence with Gemini, potentially threatening OpenAI's dominance.",
+      "domain": "tech",
+      "difficulty": "medium",
+      "golden_answer_guidance": "A correct answer should explain the contrast between Bard's poor reception and Gemini's perceived threat, outlining potential factors like improved underlying models, specific feature focus (e.g., coding), or refined market strategy that contributed to Google's recovery.",
+      "generated_at": "2025-11-21T20:25:09.220215",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "ai_competition_impact_2",
+      "prompt": "Inferring from the provocative title 'Did Google just kill OpenAI?', discuss the broader implications for competition and innovation within the AI industry, considering Google's historical position and recent advancements.",
+      "domain": "tech",
+      "difficulty": "hard",
+      "golden_answer_guidance": "The answer must address the hyperbole of 'killing' in a market context, analyzing how intensified competition from a major player like Google could drive innovation or consolidation, and acknowledging Google's prior efforts and challenges in AI.",
+      "generated_at": "2025-11-21T20:25:09.220215",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "gemini_development_strategy_3",
+      "prompt": "Based on Google's prior reputation as an AI 'loser' and the initial reception of Bard, synthesize how these past experiences likely informed the strategic development and key feature prioritization (like coding capabilities) for Gemini to better compete with rivals.",
+      "domain": "tech",
+      "difficulty": "medium",
+      "golden_answer_guidance": "A correct answer should link Bard's initial shortcomings and Google's previous AI struggles to a deliberate strategy for Gemini. It should emphasize how lessons learned likely guided the focus on specific, high-performance features such as coding to gain a competitive edge and avoid past pitfalls.",
+      "generated_at": "2025-11-21T20:25:09.220215",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "future_ai_market_prediction_4",
+      "prompt": "Assuming Gemini's success is as significant as implied by the video's title, evaluate the potential cascading effects on other tech giants heavily invested in AI, and predict how their competitive strategies might need to adapt.",
+      "domain": "tech",
+      "difficulty": "hard",
+      "golden_answer_guidance": "The answer should speculate on how intense competition from a strong Google AI offering could force rivals to accelerate their own research and development, pursue niche markets more aggressively, or form new partnerships, affecting the overall AI ecosystem and market dynamics.",
+      "generated_at": "2025-11-21T20:25:09.220215",
+      "generator_model": "gemini-2.5-flash"
+    }
+  ],
+  "generated_at": "2025-11-21T20:25:09.220215",
+  "generator": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash"
+  }
+}

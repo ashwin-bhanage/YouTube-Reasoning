@@ -1,0 +1,58 @@
+{
+  "video_id": "TsDpBCU_VHo",
+  "title": "From HOPE to FEAR — NF’s New Chapter 🖤 — NF “FEAR” | FIRST REACTION",
+  "channel": "TreTv Reacts ",
+  "keywords": [
+    "like",
+    "what",
+    "saying",
+    "know",
+    "just",
+    "music",
+    "when",
+    "got"
+  ],
+  "prompts": [
+    {
+      "prompt_id": "NF_FEAR_001",
+      "prompt": "Given the video title \"From HOPE to FEAR — NF’s New Chapter 🖤\", what specific aspects of NF's previous work would a comprehensive first reaction likely compare against the new song \"FEAR\" to substantiate the claim of a thematic shift?",
+      "domain": "general",
+      "difficulty": "medium",
+      "golden_answer_guidance": "A correct answer should discuss how the reaction would likely reference NF's known introspective style, perhaps mentioning specific thematic elements common in his prior tracks to highlight the contrast with 'FEAR,' and analyze how the new song's tone or lyrics (even if inferred from the title) might represent a departure.",
+      "generated_at": "2025-11-21T20:06:52.401602",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "NF_FEAR_002",
+      "prompt": "Considering the \"FIRST REACTION\" format described in the title, what are the inherent strengths and limitations of such a video for critically evaluating the artistic merits and thematic depth of NF's \"FEAR\" as a \"New Chapter\"?",
+      "domain": "education",
+      "difficulty": "medium",
+      "golden_answer_guidance": "The answer should identify the immediacy and raw emotional response as strengths, offering insight into initial listener impact. It should also detail limitations like a lack of deep lyrical analysis, inability to fully grasp complex themes on a first listen, or absence of historical context.",
+      "generated_at": "2025-11-21T20:06:52.401602",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "NF_FEAR_003",
+      "prompt": "If a reactor frequently uses phrases like \"what he's saying,\" \"you know,\" or \"just with the music\" while reacting to NF's \"FEAR,\" what specific analytical challenges or interpretive efforts might these linguistic patterns suggest the reactor is undertaking?",
+      "domain": "psychology",
+      "difficulty": "hard",
+      "golden_answer_guidance": "The answer should explain that such phrases indicate the reactor is actively trying to decode the song's emotional core, connect with its narrative, or articulate complex feelings evoked by the music and lyrics. It highlights an attempt to process the artist's message and personal resonance.",
+      "generated_at": "2025-11-21T20:06:52.401602",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "NF_FEAR_004",
+      "prompt": "Beyond simply identifying the thematic shift from \"HOPE\" to \"FEAR,\" what deeper artistic motivations or strategic decisions might Trey TV infer NF is exploring with this \"New Chapter\" in his music?",
+      "domain": "general",
+      "difficulty": "medium",
+      "golden_answer_guidance": "A strong answer would suggest that Trey TV might infer NF is aiming for greater emotional depth, exploring new vulnerabilities, signaling personal growth or struggles, or strategically broadening his artistic range to avoid stagnation.",
+      "generated_at": "2025-11-21T20:06:52.401602",
+      "generator_model": "gemini-2.5-flash"
+    }
+  ],
+  "generated_at": "2025-11-21T20:06:52.402604",
+  "generator": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash"
+  }
+}

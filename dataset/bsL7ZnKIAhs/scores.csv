@@ -1,0 +1,5 @@
+video_id,prompt_id,model,reasoning_depth,factual_accuracy,coherence
+bsL7ZnKIAhs,google_ai_shift_1,gemini-2.5-flash,5,3,5
+bsL7ZnKIAhs,ai_competition_impact_2,gemini-2.5-flash,5,4,5
+bsL7ZnKIAhs,gemini_development_strategy_3,gemini-2.5-flash,5,4,5
+bsL7ZnKIAhs,future_ai_market_prediction_4,gemini-2.5-flash,5,3,5

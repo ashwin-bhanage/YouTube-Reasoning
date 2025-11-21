@@ -11,13 +11,9 @@ from datetime import datetime
 
 import google.generativeai as genai
 from src.config import PROMPTS_DIR, DATA_DIR, GOOGLE_API_KEY
-from sklearn.feature_extraction.text import TfidfVectorizer
 
-# initialize Gemini client
-if GOOGLE_API_KEY:
-    genai.configure(api_key=GOOGLE_API_KEY)
-else:
-    genai.configure(api_key=None)
+# initialize Gemini
+genai.configure(api_key=GOOGLE_API_KEY)
 
 
 def _load_transcript(video_id: str) -> Dict:
@@ -28,15 +24,31 @@ def _load_transcript(video_id: str) -> Dict:
 
 
 def _extract_headlines_and_keywords(transcript_obj, top_n=8):
+    """
+    Lightweight keyword extractor using frequency (no sklearn).
+    """
     text = " ".join(
         seg["text"] if isinstance(seg, dict) else str(seg)
         for seg in transcript_obj.get("transcript", [])
-    )
-    return _extract_keywords_tfidf(text, top_n)
+    ).lower()
+
+    stopwords = {
+        "the","and","to","a","of","in","that","is","it","you","i","we","this","for","on","are",
+        "be","with","as","was","have","but","not","your","from","they","their","our","will"
+    }
+
+    words = re.findall(r"[a-z]{3,}", text)
+    freq = {}
+    for w in words:
+        if w in stopwords:
+            continue
+        freq[w] = freq.get(w, 0) + 1
+
+    sorted_words = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+    return [w for w, _ in sorted_words[:top_n]]
 
 
 def _craft_system_prompt(title: str, channel: str, keywords: List[str]) -> str:
-    """The ruleset that guides prompt creation."""
     keywords_str = ", ".join(keywords)
     return f"""
 You are a dataset-generation assistant. Produce 3 to 5 reasoning-heavy prompts based on a YouTube video.
@@ -46,40 +58,35 @@ Channel: "{channel}"
 Themes/keywords: {keywords_str}
 
 Rules:
-- Return ONLY a JSON array (no intro).
-- Each item must include: prompt_id, prompt, domain (tech|education|psychology|science|general), difficulty (easy|medium|hard).
-- Prompts: 1–2 sentences each, must force multi-step reasoning (comparison, inference, causal reasoning, synthesis, etc).
-- No verbatim recall prompts.
-- Avoid repeated phrasing; vary structure.
-- Each prompt must include a 1–2 sentence "golden answer guidance" field explaining what the answer should contain.
+- Return ONLY a JSON array.
+- Each item must include: prompt_id, prompt, domain (tech|education|psychology|science|general), difficulty (easy|medium|hard), and golden_answer_guidance.
+- Prompts must require multi-step reasoning (comparison, inference, causal reasoning, synthesis, critique).
+- Avoid simple recall or fact listing.
+- Prompts must be 1–2 sentences.
+- Golden guidance must be 1–2 sentences describing what a correct answer must include.
+- No repeated phrasing.
 """
 
 
 def generate_prompts_for_video(video_id: str, n_prompts_hint: int = 4, model: str = "gemini-2.5-flash") -> Dict:
-    """Main generator function."""
-
     transcript_obj = _load_transcript(video_id)
     title = transcript_obj.get("title", video_id)
     channel = transcript_obj.get("channel", "unknown")
-    keywords = _extract_headlines_and_keywords(transcript_obj, top_n=8)
+    keywords = _extract_headlines_and_keywords(transcript_obj)
 
     system_instruction = _craft_system_prompt(title, channel, keywords)
 
-    # small excerpt to ground generation
-    excerpt = ""
-    for seg in transcript_obj.get("transcript", [])[:6]:
-        if isinstance(seg, dict):
-            excerpt += " " + seg.get("text", "")
-        else:
-            excerpt += " " + str(seg)
-    excerpt = excerpt.strip()
+    # excerpt to ground model
+    excerpt = " ".join(
+        seg.get("text", "") if isinstance(seg, dict) else str(seg)
+        for seg in transcript_obj.get("transcript", [])[:6]
+    ).strip()
 
     user_section = (
         f"Context excerpt (~6 segments): \"{excerpt[:600]}\"\n\n"
-        f"Generate {n_prompts_hint} prompts following the rules strictly."
+        f"Generate {n_prompts_hint} prompts following the rules."
     )
 
-    # Merge into one message (Gemini 2.x requires user/model roles only)
     full_prompt = f"""
 [INSTRUCTION]
 {system_instruction}
@@ -87,19 +94,17 @@ def generate_prompts_for_video(video_id: str, n_prompts_hint: int = 4, model: st
 [CONTEXT]
 {user_section}
 
-Return ONLY the JSON array with no explanation.
+Return ONLY the JSON array.
 """
 
     gemini_model = genai.GenerativeModel(model)
 
-    response = gemini_model.generate_content(
-        [
-            {
-                "role": "user",
-                "parts": [{"text": full_prompt}]
-            }
-        ]
-    )
+    response = gemini_model.generate_content([
+        {
+            "role": "user",
+            "parts": [{"text": full_prompt}]
+        }
+    ])
 
     raw_text = response.text
 
@@ -108,20 +113,20 @@ Return ONLY the JSON array with no explanation.
     if not m:
         raise ValueError("Gemini did not return JSON array. Raw response:\n" + raw_text[:1500])
 
-    json_text = m.group(1)
-    prompts = json.loads(json_text)
+    prompts = json.loads(m.group(1))
 
-    # Normalize
+    # normalize prompts
     for i, p in enumerate(prompts, start=1):
-        p.setdefault("prompt_id", i)
+        p.setdefault("prompt_id", f"{video_id}_prompt_{i}")
         p["prompt"] = p["prompt"].strip()
         p.setdefault("domain", "general")
         p.setdefault("difficulty", "medium")
         p["generated_at"] = datetime.utcnow().isoformat()
         p["generator_model"] = model
 
-    # Save file
+    # save
     PROMPTS_DIR.mkdir(parents=True, exist_ok=True)
+
     out = {
         "video_id": video_id,
         "title": title,
@@ -136,11 +141,3 @@ Return ONLY the JSON array with no explanation.
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
 
     return out
-
-def _extract_keywords_tfidf(text: str, top_n: int = 10):
-    vectorizer = TfidfVectorizer(stop_words="english", max_features=2000)
-    tfidf = vectorizer.fit_transform([text])
-    scores = tfidf.toarray()[0]
-    vocab = vectorizer.get_feature_names_out()
-    top_ids = scores.argsort()[::-1][:top_n]
-    return [vocab[i] for i in top_ids]
