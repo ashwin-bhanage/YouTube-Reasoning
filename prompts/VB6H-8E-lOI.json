@@ -1,0 +1,58 @@
+{
+  "video_id": "VB6H-8E-lOI",
+  "title": "Spring Boot In A Nutshell",
+  "channel": "Yashmerino",
+  "keywords": [
+    "nbsp",
+    "spring",
+    "boot",
+    "want",
+    "java",
+    "like",
+    "framework",
+    "building"
+  ],
+  "prompts": [
+    {
+      "prompt_id": "spring_boot_001",
+      "prompt": "Based on the described functionality, how does Spring Boot's approach to implementing a new API endpoint or mapping a database table compare to integrating JWT security, and what does this suggest about its core focus?",
+      "domain": "tech",
+      "difficulty": "medium",
+      "golden_answer_guidance": "A correct answer must highlight Spring Boot's simplified, annotation-driven approach for common API/ORM tasks versus the 'takes a while' aspect of JWT security, inferring its focus on rapid development of typical REST API components rather than complex cross-cutting concerns.",
+      "generated_at": "2025-11-21T21:02:18.995110",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "spring_boot_002",
+      "prompt": "Given Spring Boot's features like Spring Initializr and annotation-based configuration, explain the underlying reasons for its capability to build functional REST APIs in approximately five minutes, making it highly popular.",
+      "domain": "tech",
+      "difficulty": "medium",
+      "golden_answer_guidance": "A correct answer should synthesize how project generation via Initializr combined with simplified, convention-over-configuration (annotation-driven) approaches for common tasks drastically reduce setup and boilerplate, enabling rapid API development from the outset.",
+      "generated_at": "2025-11-21T21:02:18.995110",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "spring_boot_003",
+      "prompt": "The video states Spring Boot is 'basically the Spring framework.' What does this phrase imply about Spring Boot's relationship to the broader Spring ecosystem and its value proposition for developers already familiar with Spring?",
+      "domain": "tech",
+      "difficulty": "hard",
+      "golden_answer_guidance": "A correct answer should infer that Spring Boot builds upon and simplifies the existing Spring framework, suggesting it provides a more opinionated, streamlined, and 'out-of-the-box' experience, thereby accelerating development for existing Spring users by reducing manual configuration.",
+      "generated_at": "2025-11-21T21:02:18.995110",
+      "generator_model": "gemini-2.5-flash"
+    },
+    {
+      "prompt_id": "spring_boot_004",
+      "prompt": "While the video touts building REST APIs in five minutes, it also notes JWT security 'will take a while.' Reconcile these seemingly conflicting statements by explaining how Spring Boot delivers on its rapid development promise for core functionality despite more complex features requiring additional effort.",
+      "domain": "tech",
+      "difficulty": "hard",
+      "golden_answer_guidance": "A correct answer should explain that Spring Boot's rapid development applies to initial setup and basic API exposure, achieved through minimal configuration and annotation usage, whereas specialized, non-core features like advanced security inherently demand deeper understanding and more detailed, custom configuration.",
+      "generated_at": "2025-11-21T21:02:18.995110",
+      "generator_model": "gemini-2.5-flash"
+    }
+  ],
+  "generated_at": "2025-11-21T21:02:18.995110",
+  "generator": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash"
+  }
+}

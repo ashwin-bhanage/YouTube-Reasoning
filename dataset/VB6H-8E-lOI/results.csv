@@ -1,0 +1,5 @@
+video_id,prompt_id,model,reasoning_depth,factual_accuracy,coherence
+VB6H-8E-lOI,spring_boot_001,gemini-2.5-flash,4,5,5
+VB6H-8E-lOI,spring_boot_002,gemini-2.5-flash,5,4,5
+VB6H-8E-lOI,spring_boot_003,gemini-2.5-flash,5,4,5
+VB6H-8E-lOI,spring_boot_004,gemini-2.5-flash,5,5,5

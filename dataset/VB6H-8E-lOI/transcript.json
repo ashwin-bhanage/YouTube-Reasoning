@@ -1,0 +1,93 @@
+{
+  "video_id": "VB6H-8E-lOI",
+  "video_url": "https://www.youtube.com/watch?v=VB6H-8E-lOI",
+  "subtitle_format": "vtt",
+  "subtitle_file": "E:\\Projects\\YouTube-Reasoning\\data\\raw\\VB6H-8E-lOI.en.vtt",
+  "transcript": [
+    {
+      "start": "00:00:00.240",
+      "end": "00:00:05.440",
+      "text": "Spring Boot was created by Rod Johnson and it's&nbsp; the most popular Java framework for building REST&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:05.440",
+      "end": "00:00:11.520",
+      "text": "APIs in like 5 minutes. You generate a project&nbsp; using Spring Initializr, run it, and boom,&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:11.520",
+      "end": "00:00:17.600",
+      "text": "you already have a working server exposing an API.&nbsp; Want a new endpoint? Just slap an annotation on a&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:17.600",
+      "end": "00:00:23.760",
+      "text": "method and specify the path, done. Want to map&nbsp; a Java class to a database table? Just put an&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:23.760",
+      "end": "00:00:30.000",
+      "text": "annotation and specify the table name. Want to&nbsp; add JWT security? Yeah, that\u2019ll take a while.&nbsp;"
+    },
+    {
+      "start": "00:00:30.000",
+      "end": "00:00:35.040",
+      "text": "Spring Boot is basically the Spring framework&nbsp; without all the painful configuration. It&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:35.040",
+      "end": "00:00:39.680",
+      "text": "comes with everything set up for you so you can&nbsp; focus on actually building the damn app instead&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:39.680",
+      "end": "00:00:45.280",
+      "text": "of fighting XML like people did in the stone&nbsp; age. No Tomcat installs, no manual configs,&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:45.280",
+      "end": "00:00:49.200",
+      "text": "no hosting headaches. Spring Boot takes care&nbsp; of all that, which makes it stand out. It\u2019s&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:49.200",
+      "end": "00:00:54.640",
+      "text": "used worldwide by plenty of tech giants&nbsp; like Netflix, Amazon, LinkedIn and others.&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:54.640",
+      "end": "00:00:59.120",
+      "text": "So they probably know something about it. So when you want to build a Java backend app,&nbsp;&nbsp;"
+    },
+    {
+      "start": "00:00:59.120",
+      "end": "00:01:02.125",
+      "text": "you basically have two choices:&nbsp; use Spring Boot or be wrong."
+    }
+  ],
+  "title": "Spring Boot In A Nutshell",
+  "channel": "Yashmerino",
+  "upload_date": "20251119",
+  "duration": 63,
+  "description": "Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can \"just run\"\n\n#spring #tutorial #java \n\n\ud83c\udf3f My Social Links\n\n- https://linktr.ee/yashmerino",
+  "views": 112,
+  "likes": 5,
+  "tags": [
+    "programming",
+    "dev",
+    "webdev",
+    "web development",
+    "coding",
+    "development",
+    "coding tutorial",
+    "spring",
+    "spring boot",
+    "spring boot explained in a nutshell",
+    "spring boot in a nutshell",
+    "spring boot in one minute",
+    "spring boot in 60 seconds",
+    "spring boot tutorial",
+    "spring boot java"
+  ],
+  "collected_at": "2025-11-21T21:02:05.160226"
+}
