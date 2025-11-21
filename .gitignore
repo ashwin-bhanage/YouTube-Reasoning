@@ -6,3 +6,4 @@ data/
 models_outputs/
 *.sqlite3
 .ipynb_checkpoints
+/vir
